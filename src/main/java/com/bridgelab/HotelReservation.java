@@ -1,6 +1,7 @@
 package com.bridgelab;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * The UHotelReservationSystem implements an application that help customer to find cheapest hotel
@@ -27,6 +28,15 @@ public class HotelReservation {
         return hotelDetails.add(hotel);
     }
 
+    //finding cheapest hotel
+    public int findingCheapestHotel(){
+        int LakeWoodRate = 110; int BridgeWoodRate = 160; int Ridgewood = 220;
+        int cheapestHotel = (LakeWoodRate>BridgeWoodRate) ?
+                (Math.min(LakeWoodRate, Ridgewood)) :
+                (Math.min(BridgeWoodRate,Ridgewood)) ;
+        System.out.println("The cheapest Hotel prize is " +cheapestHotel);
+        return cheapestHotel;
+    }
     /*
      *creating object of HotelReservation
      * adding hotel details
@@ -38,5 +48,6 @@ public class HotelReservation {
         hotelReservation.addHotel("BridgeWood",160,60);
         hotelReservation.addHotel("RidgeWood", 220,150);
         hotelReservation.displayHotel();
+        hotelReservation.findingCheapestHotel();
     }
 }
