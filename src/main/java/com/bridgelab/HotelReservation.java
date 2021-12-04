@@ -12,8 +12,8 @@ public class HotelReservation {
 
    //This method will add hotel name and rates
 
-    public void  addHotel(String hotelName, int rate) {
-        HotelInformation hotelInformation= new HotelInformation(hotelName, rate);
+    public void  addHotel(String hotelName, int weekDayrate,int weekEndRate) {
+        HotelInformation hotelInformation= new HotelInformation(hotelName, weekDayrate,weekEndRate);
         hotelDetails.add(hotelInformation);
     }
 
@@ -22,17 +22,21 @@ public class HotelReservation {
         System.out.println(hotelDetails);
     }
 
-     // Here we check whether the hotel is been added or not
+    // Here we check whether the hotel is been added or not
     public boolean checkHotelAdd(HotelInformation hotel) {
         return hotelDetails.add(hotel);
     }
-    public static void main(String[] args) {
 
+    /*
+     *creating object of HotelReservation
+     * adding hotel details
+     * displaying list
+     */
+    public static void main(String[] args) {
         HotelReservation hotelReservation = new HotelReservation();
-        hotelReservation.addHotel("LakeWood",5);
-        hotelReservation.addHotel("BridgeWood",3);
-        hotelReservation.addHotel("RidgeWood", 4);
-        //calling displayHotels to display list
+        hotelReservation.addHotel("LakeWood",110,90);
+        hotelReservation.addHotel("BridgeWood",160,60);
+        hotelReservation.addHotel("RidgeWood", 220,150);
         hotelReservation.displayHotel();
     }
 }
